@@ -1,0 +1,21 @@
+Overall Steps:
+-Have a lambda function that runs locally with $cargo lambda watch and $cargo lambda invoke (may need to look up specific invocation command line inputs since they might need a payload)
+-Set up a IAM user with the permissions necessary for your development environment to access AWS Lambda
+-generate and AWS_Access_Key and AWS_Secret_Key for that user and save them as environment variables in the project
+-$cargo lambda deploy will automatically look for these certificates and, if the user has the right permissions, will deploy the lambda function to your AWS account and be visible in AWS Lambda
+Setting up a IAM user for Rust Lambda Deployment:
+-Search IAM in the search bar and click on it
+-On the left side select Users
+-Create User and name it whatever you want (don’t check the box)
+-You then need to go to Permissions and give the user permissions. There are permission groups which seem like they would be a convenient way to cover them all but I found they were almost always missing a permission. The easiest way I found to do this was to go to ‘add permissions’ and use ‘Create inline policy’ this lets you select exactly what you need.
+-The permissions needed to deploy to Lambda are:
+	-iam:AttachRolePolicy
+	-iam:CreateRole
+	-iam:PassRole
+	-iam:UpdateAssumeRolePolicy
+	-lambda:CreateFunction
+	-lambda:GetFunction
+-These can be searched in the inline policy menu. In theory you can make this a group and then just add it once but I haven’t done that yet. This is also the minimum permissions just to get the lambda function to deploy to lambda, there are likely more permissions needed to use it with S3/step functions.
+-Once this user is created got to the security credentials tab for the user and down to Access Keys. Create an access key which will make an Access Key and a Secret Key. I stored these in a password manager but you will want them saved somewhere secure. 
+-Then it depends on what environment you are using. Gitpod allows you to declare environment variables in the terminal with $gp env, so this part may be specific to you. You can also save them in a AWS secrets path which shows will be displayed in you terminal if you try and deploy without them (the error messages are pretty helpful here). 
+-If you have both keys as secrets accessible to cargo lambda and the user with the appropriate permissions. When you run cargo lambda deploy it will build and deploy the lambda function to AWS.
