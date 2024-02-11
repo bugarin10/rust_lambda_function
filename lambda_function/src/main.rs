@@ -51,12 +51,21 @@ async fn function_handler(event: LambdaEvent<Request>) -> Result<Response, Error
         })?;
 
     // Prepare the response
-    let resp = Response {
-        vector_sorted: sorted_vector_str,
-    };
+    // let resp = Response {
+    //     vector_sorted: sorted_vector_str,
+    // };
+
+    let message = format!("sorted_vector:{sorted_vector_str}");
+
+    let resp = Response::builder()
+    .status(200)
+    .header("content-type", "text/html")
+    .body(message.into())
+    .map_err(Box::new)?;
+    Ok(resp);
 
     // Return the response
-    Ok(resp)
+    // Ok(resp)
 }
 
 #[tokio::main]
