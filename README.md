@@ -25,20 +25,16 @@ This is the result using the URL to know the amount of players earning more than
 The second one was constructed to have hands on Rust coding learning from basics. Thus the idea was to follow the Algorithms book by Cormen et al. and make and insertion-sort following the next pseudocode:
 
 
->1. For i from 2 to n
->2.   Key = A[i]
->3.   j = i - 1
->4.   While j > 0 and A[j] > Key
->5.     A[j+1] = A[j]
->6.     j = j - 1
->7.   End While
->8.   A[j+1] = Key
->9. End For
+```For i from 2 to n
+  Key = A[i]
+  j = i - 1
+  While j > 0 and A[j] > Key
+    A[j+1] = A[j]
+    j = j - 1
+  End While
+  A[j+1] = Key
+End For
+```
 
-
-[Image]
-
-
-[Image]
 
 
