@@ -6,17 +6,17 @@ The data is from from the [MLS](https://mlsplayers.org/resources/salary-guide).
 
 An AIM role was created with the following permissions:
 
-AWSLambdaBasicExecutionRole
-AmazonAPIGatewayAdministrator
-AmazonAPIGatewayInvokeFullAccess
-AmazonAPIGatewayPushToCloudWatchLogs
-AmazonS3ObjectLambdaExecutionRolePolicy
-AWSCodeDeployRoleForLambda
-AWSLambda_FullAccess
-AWSLambdaDynamoDBExecutionRole
-AWSLambdaInvocation-DynamoDB
-CloudWatchLambdaInsightsExecutionRolePolicy
-CloudWatchLogsFullAccess
+- AWSLambdaBasicExecutionRole
+- AmazonAPIGatewayAdministrator
+- AmazonAPIGatewayInvokeFullAccess
+- AmazonAPIGatewayPushToCloudWatchLogs
+- AmazonS3ObjectLambdaExecutionRolePolicy
+- AWSCodeDeployRoleForLambda
+- AWSLambda_FullAccess
+- AWSLambdaDynamoDBExecutionRole
+- AWSLambdaInvocation-DynamoDB
+- CloudWatchLambdaInsightsExecutionRolePolicy
+- CloudWatchLogsFullAccess
 
 This is the result using the URL to know the amount of players earning more than 700k USD per year an AWS CLI:
 
