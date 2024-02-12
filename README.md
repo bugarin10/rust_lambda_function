@@ -18,7 +18,7 @@ An AIM role was created with the following permissions:
 - CloudWatchLambdaInsightsExecutionRolePolicy
 - CloudWatchLogsFullAccess
 
-This is the result using the URL to know the amount of players earning more than 700k USD per year an AWS CLI:
+This is the result using the URL to know the amount of players earning more than 800k USD per year an AWS CLI:
 
 <img src="https://github.com/bugarin10/rust_lambda_function/blob/main/static/filtering_running.png" alt="AWS CLI">
 
